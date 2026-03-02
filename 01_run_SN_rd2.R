@@ -4,10 +4,10 @@ source("/mnt/lareaulab/reliscu/code/SampleNetwork/SampleNetwork_1.08.r")
 
 setwd("/mnt/lareaulab/reliscu/projects/NSF_GRFP/analyses/bulk/GTEx/cortex")
 
-datExprT <- fread("GTEx_cortex_counts_SampleNetworks/All_09-11-52/GTEx_cortex_counts_All_513_outliers_removed.csv", data.table=FALSE)
+datExprT <- fread("GTEx_cortex_TPM_SampleNetworks/All_12-10-19/GTEx_cortex_TPM_All_598_Qnorm.csv", data.table=FALSE)
 sampleinfo1 <- fread("/mnt/lareaulab/reliscu/projects/NSF_GRFP/data/bulk/GTEx/cortex/GTEx_cortex_sampleinfo.csv", data.table=FALSE)
 
-sampleinfo1[,1] <- make.names(sampleinfo1[,1])
+# sampleinfo1[,1] <- make.names(sampleinfo1[,1])
 sampleinfo1 <- sampleinfo1[sampleinfo1[,1] %in% colnames(datExprT),]
 sampleinfo1$Mean_age <- sapply(strsplit(sampleinfo1$AGE, "-"), function(x) mean(as.numeric(x)))
 sampleinfo1$grouplabels1 <- "All"
@@ -19,7 +19,7 @@ covar <- "SMTSD" # Tissue type
 sampleinfo1 <- sampleinfo1[order(sampleinfo1[,covar]),]
 datExprT <- datExprT[, c(1, match(sampleinfo1[,1], colnames(datExprT)))]
 
-projectname1 <- "GTEx_cortex_counts_rd2"
+projectname1 <- "GTEx_cortex_TPM_QN_rd2"
 skip1 <- 1 # An integer describing the number of feature information columns
 indices1 <- list(seq(2, ncol(datExprT)))
 samplelabels1 <- 1 # An integer that points to the column number in sampleinfo1 containing the sample labels that will appear in plots.  Note: these 					sample labels must be identical to the sample column headers in datExprT or an error will be triggered.
