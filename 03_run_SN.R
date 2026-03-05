@@ -5,7 +5,7 @@ source("/mnt/lareaulab/reliscu/code/SampleNetwork/SampleNetwork_1.08.r")
 
 setwd("/mnt/lareaulab/reliscu/projects/NSF_GRFP/analyses/bulk/GTEx/cortex")
 
-datExprT <- fread("data/GTEx_cortex_counts_All_501_outliers_removed_TMM_ComBat_SMGEBTCH_corrected.csv", data.table=FALSE)
+datExprT <- fread("data/GTEx_cortex_counts_TMMF_All_501_outliers_removed_ComBat_SMGEBTCH_corrected.csv", data.table=FALSE)
 sampleinfo1 <- fread("/mnt/lareaulab/reliscu/projects/NSF_GRFP/data/bulk/GTEx/cortex/GTEx_cortex_sampleinfo.csv", data.table=FALSE)
 
 sampleinfo1[,1] <- make.names(sampleinfo1[,1])
@@ -27,7 +27,7 @@ samplelabels1 <- 1 # An integer that points to the column number in sampleinfo1 
 grouplabels1 <- grep("grouplabels1", colnames(sampleinfo1))
 subgroup1 <- grep(covar, colnames(sampleinfo1)) # grep("SMCENTER", colnames(sampleinfo1))
 
-projectname1 <- "GTEx_cortex_counts_All_501_outliers_removed_TMM_ComBat_SMGEBTCH_corrected"
+projectname1 <- "GTEx_cortex_counts_TMMF_All_501_outliers_removed_ComBat_SMGEBTCH_corrected"
 
 btrait1 <- c(
   grep("SMCENTER", colnames(sampleinfo1)), # BSS collection site
