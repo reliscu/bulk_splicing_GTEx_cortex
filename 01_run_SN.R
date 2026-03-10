@@ -5,7 +5,7 @@ source("/mnt/lareaulab/reliscu/code/SampleNetwork/SampleNetwork_1.08.r")
 
 setwd("/mnt/lareaulab/reliscu/projects/NSF_GRFP/analyses/bulk/GTEx/cortex")
 
-datExprT <- fread("GTEx_cortex_counts_All_501_outliers_removed_TMM_ComBat_SMGEBTCH_corrected.csv", data.table=FALSE)
+datExprT <- fread("", data.table=FALSE)
 
 sampleinfo1 <- fread("/mnt/lareaulab/reliscu/projects/NSF_GRFP/data/bulk/GTEx/cortex/GTEx_cortex_sampleinfo.csv", data.table=FALSE)
 sampleinfo1$Mean_age <- sapply(strsplit(sampleinfo1$AGE, "-"), function(x) mean(as.numeric(x)))
