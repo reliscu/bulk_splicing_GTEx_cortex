@@ -1,0 +1,7 @@
+https://pmc.ncbi.nlm.nih.gov/articles/PMC4727993/: "In two mouse models of cortical migration (Dab1−/− and RhoA conditional knockout), aberrant positioning of deep-layer neurons into the upper layers resulted in an increased distribution of mature oligodendrocytes in the upper layers as well as myelination at levels similar to those normally observed in the deep layers"
+
+https://www.cell.com/structure/fulltext/S0969-2126(19)30116-9: "By solving the crystal structure of the SH3AΔ20 isoform and comparing it with the long, neuronally expressed isoform utilizing NMR spectroscopy, we show that the insertion of the residues encoded by exon 20 leads to structural plasticity that is compatible with binding of the C-terminal, but not the N-terminal, inhibitory motif"
+
+https://pmc.ncbi.nlm.nih.gov/articles/PMC6687390/: "Robo1 and Robo2 share a homologous alternative exon 6b, which is 9 and 12 bp in length, respectively. ... Here, we report that the alternative splicing of Robo1 and Robo2 (referred to herein as Robo1/2) at microexon 6b is crucial for axon guidance and is controlled by the NOVA (Neuro-oncological ventral antigen) family of splicing factors"
+
+https://www.cell.com/cell-reports/fulltext/S2211-1247(25)00793-4: "Similarly, increased inclusion of the alternative microexon of ERGIC3 inserts five amino acids at the COPII-ERV domain, potentially affecting the functionality of ERGIC3 in processing in the ER and/or sorting of molecules into COPII vesicles for transport to the Golgi.

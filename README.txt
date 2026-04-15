@@ -1,0 +1,17 @@
+
+
+Ran SN --> removed outliers
+Input: TMM normalized counts
+Output: GTEx_cortex_counts_TMMF_SampleNetworks/All_02-25-12/GTEx_cortex_counts_TMMF_All_501_outliers_removed.csv
+
+Run BC
+Input: GTEx_cortex_counts_TMMF_SampleNetworks/All_02-25-12/GTEx_cortex_counts_TMMF_All_501_outliers_removed.csv
+Output: data/GTEx_cortex_counts_TMMF_All_501_outliers_removed_ComBat_SMGEBTCH_corrected.csv
+
+Rerun SN --> remove new outliers from BC
+Input: data/GTEx_cortex_counts_TMMF_All_501_outliers_removed_ComBat_SMGEBTCH_corrected.csv
+Output: GTEx_cortex_counts_TMMF_All_501_outliers_removed_ComBat_SMGEBTCH_corrected_SampleNetworks/All_02-59-24/GTEx_cortex_counts_TMMF_All_501_outliers_removed_ComBat_SMGEBTCH_corrected_All_370_outliers_removed.csv
+
+Run FM
+- V1 (no BC):  GTEx_cortex_counts_TMMF_SampleNetworks/All_02-25-12/GTEx_cortex_counts_TMMF_All_501_outliers_removed.csv
+- V2: GTEx_cortex_counts_TMMF_All_501_outliers_removed_ComBat_SMGEBTCH_corrected_SampleNetworks/All_02-59-24/GTEx_cortex_counts_TMMF_All_501_outliers_removed_ComBat_SMGEBTCH_corrected_All_370_outliers_removed.csv 
