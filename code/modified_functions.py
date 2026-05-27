@@ -210,13 +210,13 @@ def process_gtf(gtf_file, exclude, gene_name, no_trim_id, gene_type_tag, transcr
     try:
 
         try:
-            cols = ['seqname', 'start', 'end', 'strand', 'transcript_id', gene_type_tag, gene_name, transcript_type_tag, 'exon_number']
-            gtf = gtf.loc[pd.Series([x not in exclude_chromosomes for x in gtf.seqname]) & (gtf.feature == 'exon'), cols]
-            gtf.columns = ['chrom', 'start', 'end', 'strand', 'transcript', 'gene_type', 'gene', 'transcript_type', 'exon_number']
+            cols = ['seqname', 'start', 'end', 'feature', 'strand', 'transcript_id', gene_type_tag, gene_name, transcript_type_tag, 'exon_number', 'frame', 'tag', 'protein_id']
+            gtf = gtf.loc[pd.Series([x not in exclude_chromosomes for x in gtf.seqname]), cols]
+            gtf.columns = ['chrom', 'start', 'end', 'feature', 'strand', 'transcript', 'gene_type', 'gene', 'transcript_type', 'exon_number', 'frame', 'tag', 'protein_id']
         except:
-            cols = ['seqname', 'start', 'end', 'strand', 'transcript_id', gene_name, 'exon_number']
-            gtf = gtf.loc[pd.Series([x not in exclude_chromosomes for x in gtf.seqname]) & (gtf.feature == 'exon'), cols]
-            gtf.columns = ['chrom', 'start', 'end', 'strand', 'transcript', 'gene', 'exon_number']
+            cols = ['seqname', 'start', 'end', 'feature', 'strand', 'transcript_id', gene_name, 'exon_number', 'frame', 'tag', 'protein_id']
+            gtf = gtf.loc[pd.Series([x not in exclude_chromosomes for x in gtf.seqname]), cols]
+            gtf.columns = ['chrom', 'start', 'end', 'feature', 'strand', 'transcript', 'gene', 'exon_number', 'frame', 'tag', 'protein_id']
             
     except:
         raise Exception('Isufficient information to create annotation. transcript_id is needed to find cassette exons.')
