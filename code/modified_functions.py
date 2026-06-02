@@ -210,13 +210,13 @@ def process_gtf(gtf_file, exclude, gene_name, no_trim_id, gene_type_tag, transcr
     try:
 
         try:
-            cols = ['seqname', 'start', 'end', 'feature', 'strand', 'transcript_id', gene_type_tag, gene_name, transcript_type_tag, 'exon_number', 'frame', 'tag', 'protein_id']
+            cols = ['seqname', 'start', 'end', 'feature', 'strand', 'transcript_id', gene_type_tag, gene_name, transcript_type_tag, 'exon_id', 'exon_number', 'frame', 'tag', 'protein_id']
             gtf = gtf.loc[pd.Series([x not in exclude_chromosomes for x in gtf.seqname]), cols]
-            gtf.columns = ['chrom', 'start', 'end', 'feature', 'strand', 'transcript', 'gene_type', 'gene', 'transcript_type', 'exon_number', 'frame', 'tag', 'protein_id']
+            gtf.columns = ['chrom', 'start', 'end', 'feature', 'strand', 'transcript', 'gene_type', 'gene', 'transcript_type', 'exon_id', 'exon_number', 'frame', 'tag', 'protein_id']
         except:
-            cols = ['seqname', 'start', 'end', 'feature', 'strand', 'transcript_id', gene_name, 'exon_number', 'frame', 'tag', 'protein_id']
+            cols = ['seqname', 'start', 'end', 'feature', 'strand', 'transcript_id', gene_name, 'exon_id', 'exon_number', 'frame', 'tag', 'protein_id']
             gtf = gtf.loc[pd.Series([x not in exclude_chromosomes for x in gtf.seqname]), cols]
-            gtf.columns = ['chrom', 'start', 'end', 'feature', 'strand', 'transcript', 'gene', 'exon_number', 'frame', 'tag', 'protein_id']
+            gtf.columns = ['chrom', 'start', 'end', 'feature', 'strand', 'transcript', 'gene', 'exon_id', 'exon_number', 'frame', 'tag', 'protein_id']
             
     except:
         raise Exception('Isufficient information to create annotation. transcript_id is needed to find cassette exons.')
@@ -225,7 +225,8 @@ def process_gtf(gtf_file, exclude, gene_name, no_trim_id, gene_type_tag, transcr
         gtf['gene'] = gtf.gene.str.replace(r'\.\d+$', '', regex=True)
 
     gtf.transcript = [x.split('.')[0] for x in gtf.transcript]
-
+    gtf.exon_id = [x.split('.')[0] for x in gtf.exon_id]
+     
     gtf = gtf.loc[gtf.gene != '']
         
     return gtf
